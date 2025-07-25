@@ -1,4 +1,4 @@
-# Jenkins Installation and Configuration Playbook
+# Configuration Management with Ansible
 
 ## 📦 Overview
 
@@ -12,7 +12,7 @@ This playbook automates the process of installing **Jenkins**, **Java 17**, **Do
 
 ---
 ## 🧱 Project Structure
-
+```yml
 ├── ansible/
 │   ├── inventory/
 │   │   └── aws_ec2.yml          # EC2 instance inventory configuration file
@@ -25,7 +25,7 @@ This playbook automates the process of installing **Jenkins**, **Java 17**, **Do
 │   │   └── install_maven/       # Role to install Maven
 │   ├── ansible.cfg              # Ansible configuration file
 │   └── README.md                # Project documentation (this file)
-
+```
 
 ### Roles
 - The playbook is divided into roles. Each role is responsible for installing and configuring a specific software. Here’s what each role does:
