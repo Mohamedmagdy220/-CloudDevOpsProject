@@ -1,0 +1,35 @@
+plugin: aws_ec2
+
+regions:
+  - us-east-1
+
+# فلترة صحيحة بناءً على البيانات اللي شوفناها
+filters:
+  instance-state-name: running
+  # فلتر بالـ tag Name المحدد
+  "tag:Name": 
+    - "k8s-master"
+    - "k8s-node-1" 
+    - "k8s-node-2"
+
+hostnames:
+  - tag:Name
+  - private-ip-address
+
+# متغيرات الاتصال
+compose:
+  ansible_host: public_ip_address | default(private_ip_address)
+  ansible_user: ubuntu
+  availability_zone: placement.availability_zone
+  instance_name: tags.Name
+
+
+groups:
+  # Master node (في us-east-1a)
+   master: tags.Name == "k8s-master"
+#  master: placement.availability_zone == "us-east-1a"
+
+
+# Worker nodes (في us-east-1b و us-east-1c)
+   workers: tags.Name in ["k8s-node-1", "k8s-node-2"]
+#  workers: placement.availability_zone in ["us-east-1b", "us-east-1c"]
