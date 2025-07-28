@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+  namespace: ivolve
+spec:
+  serviceName: "db"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      tolerations:
+      - key: "workload"
+        operator: "Equal"
+        value: "database"
+        effect: "NoSchedule"
+      containers:
+      - name: db
+        image: postgres
+        ports:
+        - containerPort: 5432
+        envFrom:
+            - configMapRef:
+                name: django-config
+        volumeMounts:
+        - name: my-db-data
+          mountPath: /var/lib/postgresql/data
+
+#  volumeClaimTemplates:
+ # - metadata:
+  #     name: my-db-data
+   # spec:
+    #   accessModes: ["ReadWriteOnce"]
+     #  storageClassName: ebs-sc  # الإشارة إلى StorageClass الذي أعددته
+      # resources:
+       #  requests:
+        #   storage: 1Gi
+  volumeClaimTemplates:
+    - metadata:
+         name: my-db-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+        volumeName: my-db-pv

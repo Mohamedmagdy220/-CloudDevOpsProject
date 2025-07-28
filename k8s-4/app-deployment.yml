@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: ivolve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      volumes:
+        - name: my-data
+          persistentVolumeClaim:
+            claimName: app-pvc
+      tolerations:
+      - key: "workload"
+        operator: "Equal"
+        value: "app"
+        effect: "NoSchedule"
+#      initContainers:
+ #       - name: wait-for-db
+  #        image: busybox
+   #       command:
+    #        - "sh"
+     #       - "-c"
+      #      - |
+       #       echo "Waiting for PostgreSQL to be available...";
+        #      until nc -z db 5432; do  
+         #       echo "Waiting for PostgreSQL...";
+          #      sleep 2;
+           #   done;
+            #  echo "PostgreSQL is up!"
+      containers:
+        - name: web
+          image: mohamed2200/blog_web_app:latest
+          command: ["sh", "-c", "python manage.py migrate && python manage.py makemigrations &&  python manage.py createsuperuser --noinput && python manage.py runserver 0.0.0.0:8000"]
+          ports:
+            - name: http
+              containerPort: 8000
+
+          envFrom:
+            - configMapRef:
+                name: django-config
+          env:
+          - name: DATABASE_URL
+            value: "postgresql://postgres:postgres@db:5432/postgres"
