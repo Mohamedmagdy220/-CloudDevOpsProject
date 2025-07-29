@@ -37,7 +37,7 @@ spec:
             #  echo "PostgreSQL is up!"
       containers:
         - name: web
-          image: mohamed2200/blog_web_app:10
+          image: mohamed2200/blog_web_app:11
           command: ["sh", "-c", "python manage.py migrate && python manage.py makemigrations &&  python manage.py createsuperuser --noinput && python manage.py runserver 0.0.0.0:8000"]
           ports:
             - name: http
