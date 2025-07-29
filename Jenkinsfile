@@ -6,6 +6,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
         IMAGE_NAME = 'mohamed2200/django-web-blog'
+	GITHUB_CREDENTIALS = 'github-credentials'
        }
     
     stages {
@@ -62,9 +63,9 @@ pipeline {
         stage('Push Manifests') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        echo "Logging into DockerHub..."
-                        sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
+		    withCredentials([usernamePassword(credentialsId: 'GITHUB_CREDENTIALS',
+                                    usernameVariable: 'GIT_USERNAME',
+                                    passwordVariable: 'GIT_PASSWORD')]) {
 		    pushManifests()
 		   }
                 }
