@@ -22,23 +22,29 @@ spec:
         operator: "Equal"
         value: "app"
         effect: "NoSchedule"
-#      initContainers:
- #       - name: wait-for-db
-  #        image: busybox
-   #       command:
-    #        - "sh"
-     #       - "-c"
-      #      - |
-       #       echo "Waiting for PostgreSQL to be available...";
-        #      until nc -z db 5432; do  
-         #       echo "Waiting for PostgreSQL...";
-          #      sleep 2;
-           #   done;
-            #  echo "PostgreSQL is up!"
       containers:
         - name: web
           image: mohamed2200/django-web-blog:1
-          command: ["sh", "-c", "python manage.py migrate && python manage.py makemigrations &&  python manage.py createsuperuser --noinput && python manage.py runserver 0.0.0.0:8000"]
+          command: ["sh", "-c"]
+          args: 
+          - |
+            python manage.py makemigrations &&
+            python manage.py migrate &&
+            python manage.py shell -c "
+            import os;
+            from django.contrib.auth.models import User;
+            user, created = User.objects.get_or_create(
+                username=os.environ['DJANGO_SUPERUSER_USERNAME'],
+                defaults={
+                  'email': os.environ['DJANGO_SUPERUSER_EMAIL'],
+                  'is_superuser': True,
+                  'is_staff': True
+                }
+            );
+            user.set_password(os.environ['DJANGO_SUPERUSER_PASSWORD']);
+            user.save()
+            " &&
+            python manage.py runserver 0.0.0.0:8000
           ports:
             - name: http
               containerPort: 8000

@@ -6,7 +6,7 @@ metadata:
 spec:
   claimRef:
     name: app-pvc
-    namespace: default 
+    namespace: ivolve 
   capacity:
     storage: 5Gi
   accessModes:
