@@ -64,7 +64,7 @@ pipeline {
             steps {
                 script {
 		    echo "📦 Starting Push updated Manifests..."
-		    withCredentials([usernamePassword(credentialsId: 'GITHUB_CREDENTIALS',
+		    withCredentials([usernamePassword(credentialsId: 'github-credentials',
                                     usernameVariable: 'GIT_USERNAME',
                                     passwordVariable: 'GIT_PASSWORD')]) {
 		    pushManifests()
