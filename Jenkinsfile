@@ -66,6 +66,7 @@ pipeline {
                         echo "Logging into DockerHub..."
                         sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
 		    pushManifests()
+		   }
                 }
             }
         }
