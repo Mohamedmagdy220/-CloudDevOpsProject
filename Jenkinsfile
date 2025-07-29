@@ -28,6 +28,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
+		    echo "📦 Starting Push Image stage..."
                     withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         echo "Logging into DockerHub..."
                         sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
