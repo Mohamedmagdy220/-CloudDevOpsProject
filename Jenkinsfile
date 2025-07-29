@@ -62,7 +62,10 @@ pipeline {
         stage('Push Manifests') {
             steps {
                 script {
-                    pushManifests()
+                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        echo "Logging into DockerHub..."
+                        sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin"
+		    pushManifests()
                 }
             }
         }
