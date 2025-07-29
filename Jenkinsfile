@@ -7,8 +7,13 @@ pipeline {
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
         IMAGE_NAME = 'mohamed2200/django-web-blog'
        }
-
+    
     stages {
+        stage('Checkout') {
+            steps {
+                  checkout scm
+                 }
+	    }      
         stage('Build Image') {
             steps {
                 script {
