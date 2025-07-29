@@ -63,6 +63,7 @@ pipeline {
         stage('Push Manifests') {
             steps {
                 script {
+		    echo "📦 Starting Push updated Manifests..."
 		    withCredentials([usernamePassword(credentialsId: 'GITHUB_CREDENTIALS',
                                     usernameVariable: 'GIT_USERNAME',
                                     passwordVariable: 'GIT_PASSWORD')]) {
