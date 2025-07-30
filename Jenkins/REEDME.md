@@ -58,7 +58,7 @@ Make sure you have the following ready:
 ---
 
 ## 🔐 Credentials Configuration
-✅ Set up the required credentials in Jenkins:
+> Set up the required credentials in Jenkins:
 1- Docker Hub credentials:
      - Navigate to Manage Jenkins > Manage Credentials
      - Add new credentials with type Username with password
