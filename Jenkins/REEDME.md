@@ -54,7 +54,7 @@ Make sure you have the following ready:
 - Click Save to create the node
 - Verify the slave connection appears online in the Nodes list like this:
 
-![agent-node]()
+![agent-node](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/agent-node.png)
 ---
 
 ## 🔐 Credentials Configuration
@@ -79,7 +79,7 @@ Make sure you have the following ready:
     - Paste your SSH private key
     - Set ID to "Agent-credentials"
 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/credentials.png)
 ---
 
 ## 📚 Shared Library Setup
@@ -105,13 +105,13 @@ Make sure you have the following ready:
          - Go to **Manage Jenkins > Configure System**
          - Scroll to **Global Pipeline Libraries**
          - Add a new library:
-            - Name: `sharedLib`
+            - Name: `shared-Library`
             - Default version: `main`
             - Source: GitHub URL
             - Credentials: if private
          - Click Save to apply the configuration
 
-   ![]()
+   ![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/library.png)
    ---
    
 ## Pipeline Job Creation
@@ -129,47 +129,51 @@ Make sure you have the following ready:
     - Click Save to create the pipeline
 you must see that :
 
-![image]()
+![image](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/after%20create%20pipeline.png)
 ---
 
 
 ## Kubernetes Manifests Preparation
 > Prepare your Kubernetes manifests repository with a clear structure :
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/kubernetes%20files.png)
 ---
 
-> make sure that you Modified deployment.yaml to use image placeholder like this :
+> make sure that you Modified app-deployment.yaml to use image placeholder like this :
    - Set image field to use Docker image name with ex :latest <tag>
    - This will be updated by the pipeline
 
 ## 📌 Verification Steps &  Result:
-### 1. After first Build success you can check everything:
-       
+### 1. After first Build success:
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/first%20build.png)
+---
+> you can check everything:       
 1- Docker Image in docker hub:
 
-![first image]()
+![first image](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/first%20pipeline.png)
 ---
 
 2- kubernetes manifests :
    - Check the Git repository commit history
    - Verify deployment.yaml was updated with new image tag
 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/image%20with%20tag%201.png)
 ---
    
 
-### 2. After second Build success you can check everything:
-
+### 2. After second Build success :
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/second%20build.png)
+---
+> you can check everything:
 1- Docker Image in docker hub:
 
-![first image]()
+![second image](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/second%20pipeline.png)
 ---
 
 2- kubernetes manifests :
    - Check the Git repository commit history
    - Verify deployment.yaml was updated with new image tag
 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Jenkins/images/image%20with%20tag%202.png)
 ---
 
 
