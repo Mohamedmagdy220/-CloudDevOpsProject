@@ -56,9 +56,9 @@ http://<node-ip>:<nodeport>
 2. Configure application settings:
 
 General Section:
-   . Application Name: WEB-APP-DEMO
-   . Project: default
-   . Sync Policy:
+   1. Application Name: WEB-APP-DEMO
+   2. Project: default
+   3. Sync Policy:
       ✓ Automatic sync
       ✓ Self-Heal
 
