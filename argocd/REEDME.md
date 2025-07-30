@@ -97,12 +97,13 @@ Check Git commit (within 1 minute of pipeline completion):
 
 #### 3. Observe ArgoCD Response (Within 2 Minutes)
 
-In ArgoCD UI:
-     - Application status will transition:
-     ```bash
-      Synced → OutOfSync → Syncing → Synced
-     ```
-     - Health status may briefly show Progressing during rollout
+1.In ArgoCD UI:
+   - Application status will transition:
+   ```bash
+    Synced → OutOfSync → Syncing → Synced
+   ```
+   - Health status may briefly show Progressing during rollout
+
 ![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/argocd/images/sunc%20again.png)
 ---
 
