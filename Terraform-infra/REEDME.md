@@ -76,20 +76,20 @@ chmod 400 my-jenkins-key.pem
 ### 4. Deploy
 
 - terraform init
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/terraform-init.png)
 ---
 
 - terraform plan
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/terraform-plan2.png)
 ---
 
 - terraform apply -auto-approve
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/terraform-apply.png)
 ---
 
 #### you can show the outputs 
 - terraform outputs
- ![]()
+ ![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/terraform-outputs.png)
 ---
 
 ### 5. Verified AWS Resources
@@ -98,11 +98,11 @@ chmod 400 my-jenkins-key.pem
 ---
 
 - EC2 instances were running.
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/list%20ec2.png)
 ---
 
 - Ebs for the master instanse (20 G) like the other two ec2
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/Ebs%20for%20the%20master%20like%20the%20other%20two%20ec2.png)
 ---
 
 - Security groups were correctly applied.
@@ -110,18 +110,18 @@ chmod 400 my-jenkins-key.pem
 ---
 
 - loadbalancer set up .
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/loadbalancers.png)
 ---
 
 - dynamodb set up
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/lock%20by%20dynamodb.png)
 ---
 
 - s3 bucket & the tfstate inside it 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/s3-bucket.png)
 ---
 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/tfstate%20in%20s3-bucket.png)
 ---
 
 
@@ -130,7 +130,7 @@ chmod 400 my-jenkins-key.pem
 ssh -i my-jenkins-key.pem ubuntu@<jenkins_master_public_ip>
 ```
 
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/ssh%20to%20the%20master%20ec2.png)
 ---
 
 
