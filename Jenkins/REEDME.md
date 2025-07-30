@@ -121,12 +121,12 @@ Make sure you have the following ready:
 -  Enter "Jenkins-CI-Workflow" as name
 - Select Pipeline type and click OK
 - In the configuration page:
-        - Under Pipeline section, select Pipeline script from SCM
-        - Choose Git as SCM
-        - Enter application repository URL
-        - Add Github credentials
-        - Specify branch (main)
-        - Set Script Path to jenkins/jenkinsfile
+    - Under Pipeline section, select Pipeline script from SCM
+    - Choose Git as SCM
+    - Enter application repository URL
+    - Add Github credentials
+    - Specify branch (main)
+    - Set Script Path to jenkins/jenkinsfile
 - Click Save to create the pipeline
 you must see that :
 
