@@ -3,6 +3,9 @@
 A comprehensive end-to-end CI/CD infrastructure for containerized applications, featuring AWS provisioning, automated configuration management, continuous integration, and GitOps-based deployment to Kubernetes.
 
 ---
+## Project Archticture
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/flow3.png)
+
 
 ## 🚀 Architecture Overview
 This infrastructure includes the following major components:
