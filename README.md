@@ -25,12 +25,12 @@ This infrastructure includes the following major components:
 - **Supporting Services**
   - S3 Bucket: Stores Terraform backend state.
   - loadbalancer: to efficiently distribute incoming web traffic across the EC2 instances provisioned by the server module.
-
+---
 ### 2. Development Environment (kubeadm)
 - Kubernetes cluster built using `kubeadm`.
 - Custom `iVolve` namespace.
 - Manages Deployments, Services, and Ingress resources.
-
+---
 ### 3. ArgoCD Implementation (GitOps)
 - **Core Components**
   - Application Controller
@@ -40,7 +40,7 @@ This infrastructure includes the following major components:
 - **Workflow**
   - Monitors GitHub repo for manifest changes.
   - Syncs desired configuration to Kubernetes cluster.
-
+---
 ### 4. CI/CD Pipeline Flow
 1. Developer pushes code to GitHub.
 2. Jenkins Master triggers build and delegates to Slave.
