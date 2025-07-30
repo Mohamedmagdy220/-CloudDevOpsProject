@@ -8,6 +8,22 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: local-storage
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/mnt/data/db"  # تأكد المجلد ده موجود على النود
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-db-pv-1
+  namespace: ivolve
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  hostPath:
+    path: /mnt/data/db-1
+  persistentVolumeReclaimPolicy: Retain

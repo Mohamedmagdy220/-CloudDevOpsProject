@@ -5,7 +5,7 @@ metadata:
   namespace: ivolve
 spec:
   serviceName: "db"
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: db
@@ -45,7 +45,8 @@ spec:
          name: my-db-data
       spec:
         accessModes: ["ReadWriteOnce"]
+        storageClassName: local-storage
         resources:
           requests:
             storage: 1Gi
-        volumeName: my-db-pv
+#        volumeName: my-db-pv
