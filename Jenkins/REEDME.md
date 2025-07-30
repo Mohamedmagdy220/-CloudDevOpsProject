@@ -58,21 +58,22 @@ Make sure you have the following ready:
 ---
 
 ## 🔐 Credentials Configuration
+
 > Set up the required credentials in Jenkins:
-1- Docker Hub credentials:
+- Docker Hub credentials:
      - Navigate to Manage Jenkins > Manage Credentials
      - Add new credentials with type Username with password
      - Enter your Docker Hub username and password
      - Set ID to "dockerhub-credentials"
 
-2- Git Hub credentials:
+- Git Hub credentials:
     - In the same credentials section
     - Add new credentials with type Username with password
     - Enter your Docker Hub username 
     - Enter your Docker access-token
     - Set ID to "github-credentials"
     
-3- Agent SSH credentials:
+- Agent SSH credentials:
     - In the same credentials section
     - dd new credentials with type SSH Username with private key
     - Enter "ubunto" as username 
