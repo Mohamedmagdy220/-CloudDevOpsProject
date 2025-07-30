@@ -24,7 +24,7 @@ spec:
         effect: "NoSchedule"
       containers:
         - name: web
-          image: mohamed2200/django-web-blog:10
+          image: mohamed2200/django-web-blog:11
           command: ["sh", "-c"]
           args: 
           - |
