@@ -94,7 +94,7 @@ chmod 400 my-jenkins-key.pem
 
 ### 5. Verified AWS Resources
 - VPC and subnet were created.
-![]()
+![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/subnets.png)
 ---
 
 - EC2 instances were running.
@@ -103,10 +103,6 @@ chmod 400 my-jenkins-key.pem
 
 - Ebs for the master instanse (20 G) like the other two ec2
 ![](https://github.com/Mohamedmagdy220/-CloudDevOpsProject/blob/main/Terraform-infra/images/Ebs%20for%20the%20master%20like%20the%20other%20two%20ec2.png)
----
-
-- Security groups were correctly applied.
-![]()
 ---
 
 - loadbalancer set up .
